@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items for Sale - Redeem Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+            color: #333;
+        }
+        h1 {
+            color: #2f4f4f;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .item-list {
+            margin-top: 40px;
+            font-size: 18px;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .item-list h2 {
+            color: #333;
+        }
+        .price {
+            color: #00bfff;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .redeem-section {
+            margin-top: 50px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .redeem-section input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 250px;
+            margin-right: 10px;
+            border: 2px solid #00bfff;
+            border-radius: 5px;
+            background-color: #e0f7fa;
+        }
+        .redeem-section button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #00bfff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .redeem-section button:hover {
+            background-color: #0077b6;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #2e8b57;
+            font-weight: bold;
+        }
+        .error {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ff4500;
+            font-weight: bold;
+        }
+
+        /* Confetti animation */
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            display: none;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6347;
+            animation: confettiAnimation 3s ease-out infinite;
+        }
+
+        @keyframes confettiAnimation {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Our Online Store</h1>
+        <p>Browse our limited-time offer items for sale and redeem a special code for 20% off!</p>
+
+        <!-- Items for Sale List -->
+        <div class="item-list">
+            <h2>[LIMITED TIME] NorthStar Serpent Prices</h2>
+            <ul id="northStarSerpent">
+                <li>1 NorthStar Serpent - <span class="price">350 Robux</span></li>
+                <li>3 NorthStar Serpents - <span class="price">900 Robux</span></li>
+                <li>5 NorthStar Serpents - <span class="price">1,500 Robux</span></li>
+                <li>7 NorthStar Serpents - <span class="price">2,900 Robux</span></li>
+                <li>8 NorthStar Serpents - <span class="price">4,500 Robux</span></li>
+                <li>12 NorthStar Serpents - <span class="price">7,800 Robux</span></li>
+            </ul>
+
+            <h2>Megalodon Prices</h2>
+            <ul id="megalodon">
+                <li>1 Megalodon - <span class="price">180 Robux</span></li>
+                <li>2 Megalodons - <span class="price">280 Robux</span></li>
+                <li>4 Megalodons - <span class="price">420 Robux</span></li>
+                <li>6 Megalodons - <span class="price">700 Robux</span></li>
+                <li>8 Megalodons - <span class="price">800 Robux</span></li>
+                <li>10 Megalodons - <span class="price">1,600 Robux</span></li>
+                <li>12 Megalodons - <span class="price">1,800 Robux</span></li>
+                <li>14 Megalodons - <span class="price">2,000 Robux</span></li>
+                <li>16 Megalodons - <span class="price">2,600 Robux</span></li>
+                <li>18 Megalodons - <span class="price">3,900 Robux</span></li>
+            </ul>
+
+            <h2>Colossal Squid Prices</h2>
+            <ul id="colossalSquid">
+                <li>20 Colossal Squids - <span class="price">100 Robux</span></li>
+                <li>40 Colossal Squids - <span class="price">180 Robux</span></li>
+                <li>80 Colossal Squids - <span class="price">380 Robux</span></li>
+                <li>120 Colossal Squids - <span class="price">675 Robux</span></li>
+                <li>240 Colossal Squids - <span class="price">800 Robux</span></li>
+            </ul>
+
+            <h2>Enchant Relic Prices</h2>
+            <ul id="enchantRelics">
+                <li>20 Enchant Relics - <span class="price">50 Robux</span></li>
+                <li>50 Enchant Relics - <span class="price">150 Robux</span></li>
+                <li>150 Enchant Relics - <span class="price">350 Robux</span></li>
+                <li>250 Enchant Relics - <span class="price">650 Robux</span></li>
+                <li>350 Enchant Relics - <span class="price">800 Robux</span></li>
+                <li>500 Enchant Relics - <span class="price">1,250 Robux</span></li>
+                <li>800 Enchant Relics - <span class="price">2,350 Robux</span></li>
+                <li>1,000 Enchant Relics - <span class="price">3,800 Robux</span></li>
+                <li>1,200 Enchant Relics - <span class="price">4,800 Robux</span></li>
+                <li>1,600 Enchant Relics - <span class="price">5,900 Robux</span></li>
+                <li>1,900 Enchant Relics - <span class="price">8,350 Robux</span></li>
+            </ul>
+        </div>
+
+        <!-- Redeem Code Section -->
+        <div class="redeem-section">
+            <h2>Redeem Your Code</h2>
+            <p>Enter the code to redeem a 20% discount:</p>
+            <input type="text" id="codeInput" placeholder="Enter code">
+            <button onclick="redeemCode()">Redeem Code</button>
+
+            <div id="message" class="message"></div>
+            <div id="error" class="error"></div>
+        </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <div id="confetti" class="confetti"></div>
+
+    <script>
+        // Original prices for items
+        const originalPrices = {
+            northStarSerpent: [350, 900, 1500, 2900, 4500, 7800],
+            megalodon: [180, 280, 420, 700, 800, 1600, 1800, 2000, 2600, 3900],
+            colossalSquid: [100, 180, 380, 675, 800],
+            enchantRelics: [50, 150, 350, 650, 800, 1250, 2350, 3800, 4800, 5900, 8350]
+        };
+
+        // Function to apply the discount
+        function applyDiscount() {
+            const discount = 0.20; // 20% discount
+            // Apply discount to all items in each category
+            updatePrices('northStarSerpent', originalPrices.northStarSerpent, discount);
+            updatePrices('megalodon', originalPrices.megalodon, discount);
+            updatePrices('colossalSquid', originalPrices.colossalSquid, discount);
+            updatePrices('enchantRelics', originalPrices.enchantRelics, discount);
+        }
+
+        // Function to update prices
+        function updatePrices(itemType, prices, discount) {
+            const items = document.querySelectorAll(`#${itemType} .price`);
+            for (let i = 0; i < prices.length; i++) {
+                const priceElement = items[i];
+                const discountedPrice = (prices[i] * (1 - discount)).toFixed(2);
+                priceElement.innerHTML = discountedPrice + " Robux";
+            }
+        }
+
+        // Function to trigger the confetti animation
+        function triggerConfetti() {
+            const confettiContainer = document.getElementById("confetti");
+            confettiContainer.style.display = 'block';
+
+            // Generate random confetti pieces
+            for (let i = 0; i < 100; i++) {
+                const confettiPiece = document.createElement('div');
+                confettiPiece.classList.add('confetti-piece');
+                confettiPiece.style.left = Math.random() * 100 + '%';
+                confettiPiece.style.animationDuration = Math.random() * 2 + 2 + 's';
+                confettiPiece.style.animationDelay = Math.random() * 3 + 's';
+                confettiContainer.appendChild(confettiPiece);
+            }
+
+            // Remove confetti after animation
+            setTimeout(() => {
+                confettiContainer.style.display = 'none';
+                confettiContainer.innerHTML = '';  // Clear confetti pieces
+            }, 5000);
+        }
+
+        function redeemCode() {
+            const code = document.getElementById("codeInput").value;
+            const correctCode = "ThankYouFollowers1";  // The correct code to redeem the discount
+            const messageElement = document.getElementById("message");
+            const errorElement = document.getElementById("error");
+
+            // Check if the code has already been redeemed
+            if (localStorage.getItem("redeemed") === "true") {
+                errorElement.textContent = "You have already redeemed a code!";
+                messageElement.textContent = '';
+                return;
+            }
+
+            if (code === correctCode) {
+                // Apply the discount
+                applyDiscount();
+                triggerConfetti();  // Trigger confetti on success
+
+                // Store the redemption status in localStorage
+                localStorage.setItem("redeemed", "true");
+
+                // Show a success message
+                messageElement.textContent = "Code redeemed successfully! 20% discount applied.";
+                errorElement.textContent = '';  // Clear any error message
+            } else {
+                // Show an error message if the code is incorrect
+                messageElement.textContent = '';
+                errorElement.textContent = "Invalid code. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>
